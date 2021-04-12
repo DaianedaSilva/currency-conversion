@@ -3,7 +3,8 @@
 Aplicação para converter a moeda de valores monetários.
 
 
-##Sumário 
+##Sumário
+
 * <a href="#Projeto a ser desnvolvido"> Projeto a ser desenvolvido</a>
 * <a href="#PlanoDeEstudo"> Plano de estudos</a>
 *  <a href="#PlanoDeEstudo_EtapasDoProjeto"> Etapas do projeto de conversão de moedas </a>
@@ -88,7 +89,7 @@ Além deste atributos a classe também apresentaria os principais métodos:
 Pensado no ***fluxo que o sistema deve seguir*** foi feito o fluxograma abaixo:
 
 <div align="center">
-	<img src = "https://github.com/DaianedaSilva/currency-conversion/main/src/img/FluxoDoSistema.png" alt="Fluxo Do Sistema"/> 
+	<img src = "src/img/FluxoDoSistema.png" alt="Fluxo Do Sistema"/> 
 </div>
 <br>
 
