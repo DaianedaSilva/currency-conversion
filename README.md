@@ -59,7 +59,7 @@ Pensando em como deveria ser estruturado o sistema do de ***Currency Conversion*
 A classe **_CurrencyConversion_**, seria responsável por ter os atributos:
 
 <div align="center">
-  <img src="https://github.com/DaianedaSilva/currency-conversion/tree/main/src/img/ClasseCurrencyConversion.png" alt="Classe Curency Conversion"/>
+  <img src="https://github.com/DaianedaSilva/currency-conversion/tree/main/src/img/ClasseCurrencyConversion.png">
 </div>
 
 
