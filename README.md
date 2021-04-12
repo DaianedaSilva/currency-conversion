@@ -11,8 +11,7 @@ Aplicação para converter a moeda de valores monetários.
 	  *  <a href="#PlanoDeEstudo_EtapasDoProjeto_Semana2"> Semana 2: Utilizar Spring Boot para desenvolver um endpoint</a>
 	  *  <a href="#PlanoDeEstudo_EtapasDoProjeto_Semana3"> Semana 3: Utilizar MongoDB para desenvolver uma persistência de dados</a>
 	  *  <a href="#PlanoDeEstudo_EtapasDoProjeto_Semana4"> Semana 4: Resolver o problema utilizando uma API externa</a>
-	  *  <a href="#PlanoDeEstudo_EtapasDoProjeto_Semana5"> Semana 5: Dockerizar a aplicação
-</a>
+	  *  <a href="#PlanoDeEstudo_EtapasDoProjeto_Semana5"> Semana 5: Dockerizar a aplicação</a>
 * <a href="#EstruturaDoProjeto"> Estrutura do Projeto </a>
 * <a href="#MaterialDeApoio"> Material de Aporio</a>
 
@@ -59,7 +58,10 @@ Pensando em como deveria ser estruturado o sistema do de ***Currency Conversion*
 <br>
 A classe ***CurrencyConversion***, seria responsável por ter os atributos:
 
-<img src = "https://github.com/DaianedaSilva/currency-conversion/tree/main/src/img/ClasseCurrencyConversion.png" alt="Classe CUrency Conversion"/> 
+<div align="center">
+  <img src="https://github.com/DaianedaSilva/currency-conversion/tree/main/src/img/ClasseCurrencyConversion.png" alt="Classe Curency Conversion"/>
+</div>
+
 
 | Atributos  | Type  | Descrição|
 | ------------ | ------------------------- |------------ |
@@ -70,8 +72,9 @@ A classe ***CurrencyConversion***, seria responsável por ter os atributos:
 |  conversionValue | String  | Codigo da moeda atual, capturado pelo usuário  |
 
 O atributo ***currencyExchangeRate*** seguiria a estrutura da tabela de taxas de cambio abaixo:
-
-<img src = "https://github.com/DaianedaSilva/currency-conversion/tree/main/src/img/TabelaDeTaxasDeCambio.png" alt="Tabela De Taxas De Cambio"/> 
+<div align="center">
+	<img src = "https://github.com/DaianedaSilva/currency-conversion/tree/main/src/img/TabelaDeTaxasDeCambio.png" alt="Tabela De Taxas De Cambio"/> 
+</div>
 <br> 
 Além deste atributos a classe também apresentaria os principais métodos:
 
@@ -84,7 +87,9 @@ Além deste atributos a classe também apresentaria os principais métodos:
 <br>
 Pensado no ***fluxo que o sistema deve seguir*** foi feito o fluxograma abaixo:
 
-<img src = "https://github.com/DaianedaSilva/currency-conversion/tree/main/src/img/FluxoDoSistema.png" alt="Fluxo Do Sistema"/> 
+<div align="center">
+	<img src = "https://github.com/DaianedaSilva/currency-conversion/tree/main/src/img/FluxoDoSistema.png" alt="Fluxo Do Sistema"/> 
+</div>
 <br>
 
 ---
