@@ -55,12 +55,12 @@ Dockerizar a aplicação permitirá entender as vantagens trazidas pelos contain
 
 
 <h2 id="EstruturaDoProjeto"> Estrutura do Projeto </h2>
-Pensando em como deveria ser estruturado o sistema do de ***Currency Conversion* **, foi desenvolvido o esquema abaixo o qual temos representado a estrutura da classe que irá ser desenvolvida.
+Pensando em como deveria ser estruturado o sistema do de <b><i>Currency Conversion</i></b>, foi desenvolvido o esquema abaixo o qual temos representado a estrutura da classe que irá ser desenvolvida.
 <br>
-A classe **CurrencyConversion**, seria responsável por ter os atributos:
+A classe <b><i>CurrencyConversion</i></b>, seria responsável por ter os atributos:
 
 <div align="center">
-  <img src="https://github.com/DaianedaSilva/currency-conversion/main/src/img/ClasseCurrencyConversion.png">
+  <img src="src/img/ClasseCurrencyConversion.png" alt="Classe CurrencyConversion"/> >
 </div>
 
 
@@ -74,7 +74,7 @@ A classe **CurrencyConversion**, seria responsável por ter os atributos:
 
 O atributo ***currencyExchangeRate*** seguiria a estrutura da tabela de taxas de cambio abaixo:
 <div align="center">
-	<img src = "https://github.com/DaianedaSilva/currency-conversion/tree/main/src/img/TabelaDeTaxasDeCambio.png" alt="Tabela De Taxas De Cambio"/> 
+	<img src = "src/img/TabelaDeTaxasDeCambio.png" alt="Tabela De Taxas De Cambio"/> 
 </div>
 <br> 
 Além deste atributos a classe também apresentaria os principais métodos:
@@ -86,7 +86,7 @@ Além deste atributos a classe também apresentaria os principais métodos:
 
 
 <br>
-Pensado no ***fluxo que o sistema deve seguir*** foi feito o fluxograma abaixo:
+Pensado no  <b><i>fluxo que o sistema deve seguir</i></b> foi feito o fluxograma abaixo:
 
 <div align="center">
 	<img src = "src/img/FluxoDoSistema.png" alt="Fluxo Do Sistema"/> 
