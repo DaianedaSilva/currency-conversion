@@ -53,10 +53,10 @@ Consumir uma API real que forneça taxas de câmbio atualizadas e utilizar isso 
 Dockerizar a aplicação permitirá entender as vantagens trazidas pelos containers para os projetos de software modernos. Também facilitará o entendimento do papel dos containers na infraestrutura da Creditas.
 
 
-<h2 id="#EstruturaDoProjeto"> Estrutura do Projeto </h2>
+<h2 id="EstruturaDoProjeto"> Estrutura do Projeto </h2>
 Pensando em como deveria ser estruturado o sistema do de ***Currency Conversion* **, foi desenvolvido o esquema abaixo o qual temos representado a estrutura da classe que irá ser desenvolvida.
 <br>
-A classe ***CurrencyConversion***, seria responsável por ter os atributos:
+A classe **_CurrencyConversion_**, seria responsável por ter os atributos:
 
 <div align="center">
   <img src="https://github.com/DaianedaSilva/currency-conversion/tree/main/src/img/ClasseCurrencyConversion.png" alt="Classe Curency Conversion"/>
@@ -93,7 +93,7 @@ Pensado no ***fluxo que o sistema deve seguir*** foi feito o fluxograma abaixo:
 <br>
 
 ---
-<h2 id="#MaterialDeApoio">Material de Apoio</h2>
+<h2 id="MaterialDeApoio">Material de Apoio</h2>
 
 Separamos alguns conteúdos que podem ser utilizados para auxiliar na resolução do problema ou para praticar conceitos:
 
