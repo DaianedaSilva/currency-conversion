@@ -60,7 +60,7 @@ Pensando em como deveria ser estruturado o sistema do de <b><i>Currency Conversi
 A classe <b><i>CurrencyConversion</i></b>, seria responsável por ter os atributos:
 
 <div align="center">
-  <img src="src/img/ClasseCurrencyConversion.png" alt="Classe CurrencyConversion"/> >
+  <img src="src/img/ClasseCurrencyConversion.png" alt="Classe CurrencyConversion"/> 
 </div>
 
 
