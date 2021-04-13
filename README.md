@@ -74,7 +74,7 @@ A classe <b><i>CurrencyConversion</i></b>, seria responsável por ter os atribut
 
 O atributo ***currencyExchangeRate*** seguiria a estrutura da tabela de taxas de cambio abaixo:
 <div align="center">
-	<img src = "src/img/TabelaDeTaxasDeCambio.png" alt="Tabela De Taxas De Cambio"/> 
+	<img src = "src/img/TabelaDeTaxasDeCambio.jpeg" alt="Tabela De Taxas De Cambio"/> 
 </div>
 <br> 
 Além deste atributos a classe também apresentaria os principais métodos:
