@@ -89,7 +89,7 @@ Além deste atributos a classe também apresentaria os principais métodos:
 Pensado no  <b><i>fluxo que o sistema deve seguir</i></b> foi feito o fluxograma abaixo:
 
 <div align="center">
-	<img src = "src/img/FluxoDoSistema.png" alt="Fluxo Do Sistema"/> 
+	<img src = "src/img/FluxoDoSistema.jpeg" alt="Fluxo Do Sistema"/> 
 </div>
 <br>
 
