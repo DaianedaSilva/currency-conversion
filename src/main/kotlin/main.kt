@@ -16,6 +16,8 @@ fun main(){
     //Teste - dividindo as entradas
     var inputSplit =  currencyConversion.splitCurrency(userInput);
 
+
+
     println("\n VALORES SEPARADOS ")
     println("* currentCurrency: ${inputSplit[0]} ")
     println("* conversionValue: ${inputSplit[1]} ")

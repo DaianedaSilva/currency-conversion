@@ -1,19 +1,24 @@
 package com.creditas.trust.currency
 
-import org.hamcrest.CoreMatchers.equalTo
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertThat
 import org.junit.Test
-import java.math.BigDecimal
 
-class MoneyTest {
+class MoneyConversionTest {
 
     @Test
-    fun `Converts 100 BRL to EUA currency`(){
-        val result = Money().convert("BRL", "100", "EUA")
+    fun `Converts 100 BRL to USD currency`() {
+        val result = MoneyConversion().convert("BRL", "100", "USD")
+
+        assertEquals("563,60", result)
+    }
+
+    @Test
+    fun `Converts 100 BRL to EUR currency`() {
+        val result = MoneyConversion().convert("BRL", "100", "EUR")
 
         assertEquals("671.70", result)
     }
+
 
 
 
