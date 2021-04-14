@@ -10,10 +10,12 @@ class MoneyTest {
 
     @Test
     fun `Converts 100 BRL to EUA currency`(){
-        val result = Money().convert("BRL100", "EUA")
+        val result = Money().convert("BRL", "100", "EUA")
 
         assertEquals("671.70", result)
     }
+
+
 
 //    @Test
 //    fun `adds its own amount to a big decimal`() {
