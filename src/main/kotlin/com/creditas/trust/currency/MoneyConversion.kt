@@ -2,10 +2,8 @@ package com.creditas.trust.currency
 
 import java.math.BigDecimal
 import java.math.RoundingMode
-import java.text.DecimalFormat
-import kotlin.math.roundToInt
 
-class Money {
+class MoneyConversion {
 
 
     fun convert(s: String, s1: String, s2: String): String {
@@ -13,8 +11,12 @@ class Money {
         val value = BigDecimal(100)
         val result = tax.multiply(value)
 
+<<<<<<< HEAD:src/main/kotlin/com/creditas/trust/currency/Money.kt
         val dec = DecimalFormat("####.##")
         return dec.format(result)
+=======
+        return String.format("%.2f", result)
+>>>>>>> ae5ada534bced567b44092e96778e73ac2b72023:src/main/kotlin/com/creditas/trust/currency/MoneyConversion.kt
 
     }
 
