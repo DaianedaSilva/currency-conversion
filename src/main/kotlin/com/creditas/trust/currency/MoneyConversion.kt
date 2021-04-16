@@ -11,12 +11,7 @@ class MoneyConversion {
         val value = BigDecimal(100)
         val result = tax.multiply(value)
 
-<<<<<<< HEAD:src/main/kotlin/com/creditas/trust/currency/Money.kt
-        val dec = DecimalFormat("####.##")
-        return dec.format(result)
-=======
         return String.format("%.2f", result)
->>>>>>> ae5ada534bced567b44092e96778e73ac2b72023:src/main/kotlin/com/creditas/trust/currency/MoneyConversion.kt
 
     }
 

@@ -2,11 +2,6 @@ package com.creditas.trust.currency
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
-<<<<<<< HEAD:src/test/kotlin/com/creditas/trust/currency/MoneyTest.kt
-import org.junit.experimental.theories.suppliers.TestedOn
-import java.math.BigDecimal
-=======
->>>>>>> ae5ada534bced567b44092e96778e73ac2b72023:src/test/kotlin/com/creditas/trust/currency/MoneyConversionTest.kt
 
 class MoneyConversionTest {
 
