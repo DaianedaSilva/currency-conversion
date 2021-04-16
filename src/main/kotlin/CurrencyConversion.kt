@@ -1,57 +1,96 @@
-class CurrencyConversion{
-    //matriz com as taxas de cambio
-    val currencyExchengeRate = arrayOf(        //AUD        BRL     EUR     IRR       USD
-                                        arrayOf(1.0,     4.3009,  0.6403,  0.0000,  0.7630),  //AUD
-                                        arrayOf(0.2324,  1.0,     0.1488,  0.0001,  0.1774),  //BRL
-                                        arrayOf(1.5616,  6.7170,  1.0,     0.0000,  1.5615),  //EUR
-                                        arrayOf(0.0000,  0.0001,  0.0000,  1.0,     0.0000),  //IRR
-                                        arrayOf(1.31021, 5.6360,  0.8380,  0.0000,  1.0) )    //USD
+import java.text.NumberFormat
+import java.util.*
 
-    //possiveis moedas de conversão
-    enum class CurencyCode {AUD,BRL, EUR,IRR, USD }
+class CurrencyConversion {
+    public fun currencyConverse(userInput: String): String {
+        val infosInput = splitCurrency(userInput);
 
-    //atributo que recebe a moeda atual para a conversão
-    var currentCurrency: String = ""
-
-    //atributo que recebe a moeda para qual ira ser feita a conversão
-    var currencyDestiny:String = ""
-
-
-    //atributo que recebe o valor a ser convertido
-    var conversionValue: Double = 0.0
-        set(value){
-            if (value > 0.0){
-                field = value;
-            }else{
-                println("ENTRADA INVALIDA, NUMERO NEGATIVO")
-            }
-        };
-
-//    verificar se os codes estão listados no sistema
-    fun codeIsValid( code: String):Boolean{
-        for (codes in CurencyCode.values()){
-            if( code == codes.name){
-                return true;
-            }
+        if (!codeIsValid(infosInput.target.name) && !codeIsValid(infosInput.source.name)) {
+            return "ERRO! Taxas invalidas"
         }
-        return false;
+        if (!amountIsValid(infosInput.amountToConversion)) {
+            return "ERRO! Valor Negativo"
+        }
+        val result = conversion(infosInput);
+        return ShowResult(result)
     }
 
-    //dividir as variáveis ao encontrar um " "
-    fun splitCurrency(userInput:String): Array<String>{
+    //matriz com as taxas de cambio
+    private val currencyExchengeRate = arrayOf(//AUD    BRL      EUR       IRR          USD
+        arrayOf(1.0, 4.3009, 0.6403, 32631.3775, 0.7630),   //AUD
+        arrayOf(0.2324, 1.0, 0.1491, 7493.7254, 0.1774),   //BRL
+        arrayOf(1.5616, 6.7170, 1.0, 50403.8615, 1.5615),   //EUR
+        arrayOf(0.0000, 0.0001, 0.0000, 1.0, 0.0000),   //IRR
+        arrayOf(1.31021, 5.6360, 0.8380, 42105.0068, 1.0)
+    )    //USD
+
+    private enum class CurrencyCode { AUD, BRL, EUR, IRR, USD }
+
+    private data class Conversion(
+        val source: CurrencyCode,
+        val target: CurrencyCode,
+        val amountToConversion: Double,
+        var rate: Double = 0.0,
+        var amountConverted: Double = 0.0
+    )
+
+    private fun codeIsValid(code: String): Boolean = code in CurrencyCode.values().map(CurrencyCode::name)
+
+    private fun amountIsValid(amount: Double): Boolean = amount >= 0
+
+    private fun splitCurrency(userInput: String): Conversion {
+
         val delimiter = " ";
+        val splitValues = userInput.split(delimiter);// exemplo -> ["BRL100", "EUR"]
 
-        val splitValues = userInput.split(delimiter);
+        val source = splitSource(splitValues[0])    // -> BRL
+        val amount = splitAmount(splitValues[0])    // -> 100
+        val target = splitValues[1]                 // -> EUR
 
-        val currentCurrencySplit = splitValues[0].slice(0 until 2)
+        val valuesToConversion = Conversion(CurrencyCode.valueOf(source), CurrencyCode.valueOf(target), amount)
 
-        val conversionValueSplit = splitValues[0].slice(3 until splitValues[0].length)
-
-        val currentDestinySplit = splitValues[1]
-
-        val values = arrayOf(currentCurrencySplit,conversionValueSplit,currentDestinySplit)
-
-        return values;
+        return valuesToConversion;
     }
+
+    private fun splitSource(userInput: String): String {
+        val source = userInput.slice(0 until 3);
+        return source;
+    }
+
+    private fun splitAmount(userInput: String): Double {
+        val amount = userInput.slice(3 until userInput.length).toDouble();
+        return amount;
+    }
+
+    private fun conversion(valuesToConversion: Conversion): Conversion {
+        val line = valuesToConversion.source.ordinal;
+        val column = valuesToConversion.target.ordinal;
+
+        val rate = currencyExchengeRate[line][column];
+        val newAmount = valuesToConversion.amountToConversion * rate;
+
+        valuesToConversion.rate = rate;
+        valuesToConversion.amountConverted = newAmount;
+
+        return valuesToConversion;
+    }
+
+    private fun formatAmount(amount: Double, codeCurrent: String): String {
+        val format = NumberFormat.getCurrencyInstance();
+        format.setMaximumFractionDigits(2);
+        format.setCurrency(Currency.getInstance(codeCurrent));
+
+        return format.format(amount);
+
+    }
+
+    private fun ShowResult(result: Conversion): String {
+        val amountSourceFormateted = formatAmount(result.amountToConversion, result.source.name)
+        val amountTargetFormateted = formatAmount(result.amountConverted, result.target.name)
+
+        return "*** Conversion of ${result.source} to ${result.target} ***\n  ${amountSourceFormateted}  ->  ${amountTargetFormateted}\n\n  Exchange Rate: ${result.rate}\n"
+
+    }
+
 
 }

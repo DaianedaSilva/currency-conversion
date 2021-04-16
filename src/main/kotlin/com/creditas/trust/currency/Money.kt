@@ -14,8 +14,6 @@ class Money {
         val result = tax.multiply(value)
 
         val dec = DecimalFormat("####.##")
-
-
         return dec.format(result)
 
     }
