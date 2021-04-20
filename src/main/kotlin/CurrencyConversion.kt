@@ -1,19 +1,15 @@
+import java.lang.Exception
 import java.text.NumberFormat
 import java.util.*
 
+
 class CurrencyConversion {
 
-    public fun currencyConverse(userInput: String): String {
-        val infosInput = splitCurrency(userInput);
+    public fun currencyConverse(userInput: String) :String {
+        val infosInput = splitCurrency(userInput)
 
-        if (!codeIsValid(infosInput.target.name) && !codeIsValid(infosInput.source.name)) {
-            return "ERRO! Taxas invalidas"
-        }
-        if (!amountIsValid(infosInput.amountToConversion)) {
-            return "ERRO! Valor Negativo"
-        }
-        val result = conversion(infosInput);
-        return ShowResult(result)
+        val result = conversion(infosInput)
+        return showResult(result)
     }
 
     //matriz com as taxas de cambio
@@ -40,7 +36,7 @@ class CurrencyConversion {
     private fun codeIsValid(code: String): Boolean = code in CurrencyCode.values().map(CurrencyCode::name)
 
     // verificar se o valor para conversão é valido
-    private fun amountIsValid(amount: Double): Boolean = amount >= 0
+    private fun amountIsPositive(amount: Double): Boolean = amount >= 0
 
     //formatar a entrada do usuário
     private fun splitCurrency(userInput: String): Conversion {
@@ -52,15 +48,22 @@ class CurrencyConversion {
         val amount = splitAmount(splitValues[0])    // -> 100
         val target = splitValues[1]                 // -> EUR
 
+        if (!codeIsValid(target) || !codeIsValid(source)) {
+            throw Exception( "ERRO! Taxas invalidas")
+        }
+        if (!amountIsPositive(amount)) {
+            throw Exception( "ERRO! Valor Negativo")
+        }
+
         val valuesToConversion = Conversion(CurrencyCode.valueOf(source), CurrencyCode.valueOf(target), amount)
 
-        return valuesToConversion
+       return valuesToConversion
     }
 
     //Separar do input apenas o source
     private fun splitSource(userInput: String): String {
-        val source = userInput.slice(0 until 3);
-        return source;
+        val source = userInput.slice(0 until 3)
+        return source
     }
 
     //Separar do input apenas o amount
@@ -94,12 +97,17 @@ class CurrencyConversion {
     }
 
     //mostrar o resultado final para o suário
-    private fun ShowResult(result: Conversion): String {
-        val amountSourceFormateted = formatAmount(result.amountToConversion, result.source.name)
-        val amountTargetFormateted = formatAmount(result.amountConverted, result.target.name)
+    private fun showResult(result: Conversion): String {
+        val amountSourceFormatted = formatAmount(result.amountToConversion, result.source.name)
+        val amountTargetFormatted = formatAmount(result.amountConverted, result.target.name)
 
-        return "*** Conversion of ${result.source} to ${result.target} ***\n  ${amountSourceFormateted}  ->  ${amountTargetFormateted}\n\n  Exchange Rate: ${result.rate}\n"
-
+        return """
+            | *** Conversion of ${result.source} to ${result.target} ***            
+            |${amountSourceFormatted}  ->  ${amountTargetFormatted}
+            |
+            |Exchange Rate: ${result.rate}
+            | 
+        """.trimMargin("|")
     }
 
 
