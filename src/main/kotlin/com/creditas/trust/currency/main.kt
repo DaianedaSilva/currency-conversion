@@ -1,3 +1,5 @@
+import com.creditas.trust.currency.CurrencyConversion
+
 fun main(){
 
     val currencyConversion = CurrencyConversion();

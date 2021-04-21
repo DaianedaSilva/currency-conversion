@@ -57,10 +57,10 @@ Dockerizar a aplicação permitirá entender as vantagens trazidas pelos contain
 <h2 id="EstruturaDoProjeto"> Estrutura do Projeto </h2>
 Pensando em como deveria ser estruturado o sistema do de <b><i>Currency Conversion</i></b>, foi desenvolvido o esquema abaixo o qual temos representado a estrutura da classe que irá ser desenvolvida.
 <br>
-A classe <b><i>CurrencyConversion</i></b>, seria responsável por ter os atributos:
+A classe <b><i>com.creditas.trust.currency.CurrencyConversion</i></b>, seria responsável por ter os atributos:
 
 <div align="center">
-  <img src="src/img/ClasseCurrencyConversion.png" alt="Classe CurrencyConversion"/> 
+  <img src="src/img/ClasseCurrencyConversion.png" alt="Classe com.creditas.trust.currency.CurrencyConversion"/> 
 </div>
 
 
