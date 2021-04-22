@@ -1,13 +1,22 @@
-import com.creditas.trust.currency.CurrencyConversion
+package com.creditas.trust.currency
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+
+@SpringBootApplication
+open class CurrencyConversionAplication
 
 fun main(){
 
-    val currencyConversion = CurrencyConversion();
+    runApplication<CurrencyConversionAplication>()
 
-    print("\n\n Entrada: ")
-    val userInput: String = readLine().toString();
 
-    println(currencyConversion.currencyConverse(userInput));
+//    val currencyConversion = CurrencyConversion();
+//
+//    print("\n\n Entrada: ")
+//    val userInput: String = readLine().toString();
+//
+//    println(currencyConversion.currencyConverse(userInput));
 
 }
 

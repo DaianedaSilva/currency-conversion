@@ -1,11 +1,8 @@
 package com.creditas.trust.currency
 
-import com.creditas.trust.currency.CurrencyConversion
+import com.creditas.trust.currency.controllers.CurrencyConversion
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import java.lang.Exception
-import java.text.NumberFormat
-import java.util.*
 
 
 class CurrencyConversionTest {

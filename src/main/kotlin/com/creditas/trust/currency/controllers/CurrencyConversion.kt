@@ -1,12 +1,17 @@
-package com.creditas.trust.currency
+package com.creditas.trust.currency.controllers
 
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
 import java.lang.Exception
 import java.text.NumberFormat
 import java.util.*
 
-
+@RestController
+@RequestMapping("/CurrencyConversion")
 class CurrencyConversion {
 
+    @GetMapping("/conversion")
     public fun currencyConverse(userInput: String) :String {
         val infosInput = splitCurrency(userInput)
 

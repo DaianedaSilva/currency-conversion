@@ -23,6 +23,9 @@ jar {
 }
 
 dependencies {
+    //adicionando SpringBoot
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.5'
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     testImplementation "junit:junit:4.12"
     testImplementation "org.amshove.kluent:kluent:1.59"
