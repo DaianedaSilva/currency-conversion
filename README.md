@@ -14,7 +14,7 @@ Aplicação para converter a moeda de valores monetários.
 	  *  <a href="#PlanoDeEstudo_EtapasDoProjeto_Semana4"> Semana 4: Resolver o problema utilizando uma API externa</a>
 	  *  <a href="#PlanoDeEstudo_EtapasDoProjeto_Semana5"> Semana 5: Dockerizar a aplicação</a>
 * <a href="#EstruturaDoProjeto"> Estrutura do Projeto </a>
-* <a href="#MaterialDeApoio"> Material de Aporio</a>
+* <a href="#MaterialDeApoio"> Material de Apoio</a>
 
 ---
 
