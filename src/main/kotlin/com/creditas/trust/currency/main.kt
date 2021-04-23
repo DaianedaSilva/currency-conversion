@@ -10,13 +10,5 @@ fun main(){
 
     runApplication<CurrencyConversionAplication>()
 
-
-//    val currencyConversion = CurrencyConversion();
-//
-//    print("\n\n Entrada: ")
-//    val userInput: String = readLine().toString();
-//
-//    println(currencyConversion.currencyConverse(userInput));
-
 }
 
