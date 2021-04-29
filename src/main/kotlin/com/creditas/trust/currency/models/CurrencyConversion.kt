@@ -1,4 +1,4 @@
-package com.creditas.trust.currency.controllers
+package com.creditas.trust.currency.models
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -106,12 +106,22 @@ class CurrencyConversion {
         val amountTargetFormatted = formatAmount(result.amountConverted, result.target.name)
 
         return """
-            | *** Conversion of ${result.source} to ${result.target} ***            
-            |${amountSourceFormatted}  ->  ${amountTargetFormatted}
-            |
-            |Exchange Rate: ${result.rate}
-            | 
-        """.trimMargin("|")
+            <div style="text-align: center;">
+           
+                <h1> *** Conversion of ${result.source} to ${result.target} *** </h1> <br>         
+                  <h3> ${amountSourceFormatted}     ->      ${amountTargetFormatted} </h3> <br>
+                
+                <h3>Exchange Rate: ${result.rate} </h3>
+            </div>
+            
+        """
+//        return """
+//            | *** Conversion of ${result.source} to ${result.target} ***
+//            |${amountSourceFormatted}  ->  ${amountTargetFormatted}
+//            |
+//            |Exchange Rate: ${result.rate}
+//            |
+//        """.trimMargin("|")
     }
 
     private fun testResult (result: Conversion): String{
