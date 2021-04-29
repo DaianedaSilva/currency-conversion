@@ -2,7 +2,7 @@ package com.creditas.trust.currencyconversion.controller
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
-import com.creditas.trust.currencyconversion.models.CurrencyConversion
+import com.creditas.trust.currencyconversion.service.CurrencyConversionService
 
 @RestController
 class CurrencyConversionController {
@@ -14,7 +14,7 @@ class CurrencyConversionController {
     @GetMapping("/currencies-conversion")
     public fun converter(userInput: String): String {
 
-        return CurrencyConversion().currencyConverse(userInput)
+        return CurrencyConversionService().currencyConverse(userInput)
     }
 
 

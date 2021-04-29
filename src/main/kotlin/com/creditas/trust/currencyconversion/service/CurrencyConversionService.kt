@@ -1,11 +1,11 @@
-package com.creditas.trust.currencyconversion.models
+package com.creditas.trust.currencyconversion.service
 
 import java.lang.Exception
 import java.text.NumberFormat
 import java.util.*
 
 
-class CurrencyConversion {
+class CurrencyConversionService {
 
     public fun currencyConverse(userInput: String) :String {
         val infosInput = splitCurrency(userInput)
