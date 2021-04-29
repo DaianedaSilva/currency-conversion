@@ -1,0 +1,21 @@
+### C - CREAT
+POST http://localhost:8080/accounts
+Content-Type: application/json
+
+
+### R - READ
+GET http://localhost:8080/exchange-rate
+Content-Type: application/json
+
+### R - READ
+GET http://localhost:8080/exchange-rate/BRL
+Content-Type: application/json
+
+### U - UPDATE
+GET http://localhost:8080/exchange-rate/BRL
+Content-Type: application/json
+
+
+### D = DELETE
+GET http://localhost:8080/exchange-rate/BRL
+Content-Type: application/json
