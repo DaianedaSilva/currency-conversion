@@ -7,11 +7,8 @@ import java.lang.Exception
 import java.text.NumberFormat
 import java.util.*
 
-@RestController
-@RequestMapping("/CurrencyConversion")
 class CurrencyConversion {
 
-    @GetMapping("/conversion")
     public fun currencyConverse(userInput: String) :String {
         val infosInput = splitCurrency(userInput)
 

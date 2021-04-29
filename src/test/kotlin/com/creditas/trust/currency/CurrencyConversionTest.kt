@@ -1,6 +1,6 @@
 package com.creditas.trust.currency
 
-import com.creditas.trust.currency.controllers.CurrencyConversion
+import com.creditas.trust.currency.models.CurrencyConversion
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
