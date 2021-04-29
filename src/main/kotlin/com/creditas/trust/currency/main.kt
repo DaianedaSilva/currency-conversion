@@ -4,7 +4,7 @@ fun main(){
 
     val currencyConversion = CurrencyConversion();
 
-    print("\n\nEntrada: ")
+    print("\n\n Entrada: ")
     val userInput: String = readLine().toString();
 
     println(currencyConversion.currencyConverse(userInput));
