@@ -1,12 +1,12 @@
 package com.creditas.trust.currencyconversion.service
 
+import org.springframework.stereotype.Service
 import java.lang.Exception
 import java.text.NumberFormat
 import java.util.*
 
-
-class CurrencyConversionService {
-
+@Service
+class CurrencyConversionService(val exchangeRageService: ExchangeRageService){
     public fun currencyConverse(userInput: String) :String {
         val infosInput = splitCurrency(userInput)
 
@@ -14,13 +14,6 @@ class CurrencyConversionService {
         return showResult(result)
     }
 
-    //matriz com as taxas de cambio
-    private val currencyExchengeRate = arrayOf(    //AUD       BRL      EUR       IRR         USD
-        arrayOf(1.0,     4.3009,  0.6403,  32631.3775,  0.7630),   //AUD
-        arrayOf(0.2324,  1.0,     0.1491,  7493.7254,   0.1774),   //BRL
-        arrayOf(1.5616,  6.7170,  1.0,     50403.8615,  1.5615),   //EUR
-        arrayOf(0.0000,  0.0001,  0.0000,  1.0,         0.0000),   //IRR
-        arrayOf(1.31021, 5.6360,  0.8380,  42105.0068,    1.0))    //USD
 
     //possiveis moedas de conversão
     private enum class CurrencyCode (val tagCodelanguage:String){
@@ -82,15 +75,16 @@ class CurrencyConversionService {
 
     //realizar a conversão
     private fun conversion(valuesToConversion: Conversion): Conversion {
-        val line = valuesToConversion.source.ordinal
-        val column = valuesToConversion.target.ordinal
 
-        val rate = currencyExchengeRate[line][column]
-        val newAmount = valuesToConversion.amountToConversion * rate
+
+        val source = valuesToConversion.source.name
+        val target = valuesToConversion.target.name
+
+        val rate = exchangeRageService.getRate(source,target)
+
+
 
         valuesToConversion.rate = rate
-        valuesToConversion.amountConverted = newAmount
-
         return valuesToConversion
     }
 
@@ -121,10 +115,8 @@ class CurrencyConversionService {
 
     //formatando a saída do amount
     private fun formatAmount(amount: Double, codeCurrent: String): String {
-
         val format = NumberFormat.getCurrencyInstance(Locale.forLanguageTag((CurrencyCode.valueOf(codeCurrent).tagCodelanguage)))
         format.setMaximumFractionDigits(2)
-
         return format.format(amount)
 
     }

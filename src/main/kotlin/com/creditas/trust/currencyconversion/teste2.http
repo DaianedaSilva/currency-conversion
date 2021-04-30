@@ -11,6 +11,10 @@ Content-Type: application/json
 GET http://localhost:8080/exchange-rate/BRL
 Content-Type: application/json
 
+### R - READ
+GET http://localhost:8080/exchange-rate/getRate
+Content-Type: application/json
+
 ### U - UPDATE
 GET http://localhost:8080/exchange-rate/BRL
 Content-Type: application/json
