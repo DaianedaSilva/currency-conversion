@@ -14,7 +14,6 @@ class CurrencyConversionService(val exchangeRageService: ExchangeRageService){
         return showResult(result)
     }
 
-
     //possiveis moedas de conversão
     private enum class CurrencyCode (val tagCodelanguage:String){
         AUD("en-AUD"),
@@ -75,15 +74,13 @@ class CurrencyConversionService(val exchangeRageService: ExchangeRageService){
 
     //realizar a conversão
     private fun conversion(valuesToConversion: Conversion): Conversion {
-
-
         val source = valuesToConversion.source.name
         val target = valuesToConversion.target.name
 
         val rate = exchangeRageService.getRate(source,target)
+        val newAmount = valuesToConversion.amountToConversion * rate
 
-
-
+        valuesToConversion.amountConverted = newAmount
         valuesToConversion.rate = rate
         return valuesToConversion
     }
