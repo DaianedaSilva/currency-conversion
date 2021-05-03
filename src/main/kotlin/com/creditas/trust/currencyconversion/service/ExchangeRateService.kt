@@ -43,9 +43,9 @@ class ExchangeRageService(val repository: ExchengeRateRepository) {
     }
 
 
-    fun findById(idSoucer: String): ExchangeRate {
-        return repository.findById(idSoucer).orElseThrow {
-            RuntimeException("Currency not found: $idSoucer")
+    fun findById(id: String): ExchangeRate {
+        return repository.findById(id).orElseThrow {
+            RuntimeException("Currency not found: $id")
         }
     }
 
@@ -57,8 +57,8 @@ class ExchangeRageService(val repository: ExchengeRateRepository) {
         return repository.findAll()
     }
 
-    fun delete(idSoucer: String) {
-        val source = findById(idSoucer)
+    fun delete(id: String) {
+        val source = findById(id)
         repository.delete(source)
     }
 }
