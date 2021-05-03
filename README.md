@@ -28,7 +28,7 @@ Repositorio responsavél por implementar um MongoRepository para a persistência
 Contém os arquivos services:
 
 * **_ExchangeRageService_**
-    * Arquivo contendo a classe " **_class ExchangeRageService(val repository: ExchengeRateRepository)_**  ", onde implementa as regras de negocio para salvar as taxas de cambio no banco, buscar ou deletar uma taxa pelo id, buscar todas as taxas, e trazer a taxa de câmbio correta para conversão dado as moedas que deseja converter.
+    * Arquivo contendo a classe " **_class ExchangeRageService(val repository: ExchengeRateRepository)_**  ", onde implementa as regras de negocio para salvar as taxas de câmbio no banco, buscar ou deletar uma taxa pelo id, buscar todas as taxas, e trazer a taxa de câmbio correta para conversão dado as moedas que deseja converter.
     
 
 * **_CurrencyConversionService_**
