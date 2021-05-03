@@ -104,12 +104,6 @@ class CurrencyConversionService(val exchangeRageService: ExchangeRageService){
 
     }
 
-    private fun testResult (result: Conversion): String{
-        val sourceTest = formatAmount(result.amountToConversion, result.source.name)
-        val targetTest = formatAmount(result.amountConverted, result.target.name)
-        return "${sourceTest} -> ${targetTest}"
-    }
-
     //formatando a saída do amount
     private fun formatAmount(amount: Double, codeCurrent: String): String {
         val format = NumberFormat.getCurrencyInstance(Locale.forLanguageTag((CurrencyCode.valueOf(codeCurrent).tagCodelanguage)))

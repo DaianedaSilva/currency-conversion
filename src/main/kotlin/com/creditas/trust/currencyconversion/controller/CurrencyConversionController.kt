@@ -15,7 +15,6 @@ class CurrencyConversionController(val service: CurrencyConversionService) {
 
     @GetMapping("/currencies-conversion/{userInput}")
     public fun converter(@PathVariable("userInput") userInput: String): String {
-
         return service.currencyConverse(userInput)
     }
 

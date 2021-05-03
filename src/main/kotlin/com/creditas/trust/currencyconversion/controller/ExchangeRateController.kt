@@ -5,7 +5,6 @@ import com.creditas.trust.currencyconversion.service.ExchangeRageService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
-
 @RestController
 @RequestMapping("exchange-rate")
 class ExchengeRateController(val service: ExchangeRageService) {
@@ -26,10 +25,8 @@ class ExchengeRateController(val service: ExchangeRageService) {
         @PathVariable("id-source") idSource: String,
         @PathVariable("id-target") idTarget: String
     ): Double {
-        val response = service.getRate(idSource, idTarget)
 
-        return response
-
+         return service.getRate(idSource, idTarget)
     }
 
 
