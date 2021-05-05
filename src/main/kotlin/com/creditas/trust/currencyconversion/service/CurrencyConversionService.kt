@@ -4,13 +4,16 @@ import org.springframework.stereotype.Service
 import java.lang.Exception
 import java.text.NumberFormat
 import java.util.*
+import com.creditas.trust.currencyconversion.data.models.ExchangeRates
+import com.creditas.trust.currencyconversion.data.models.ExchangeRates.Rates
 
 @Service
-class CurrencyConversionService(val exchangeRageService: ExchangeRageService){
+class CurrencyConversionService(){
     public fun currencyConverse(userInput: String) :String {
         val infosInput = splitCurrency(userInput)
 
         val result = conversion(infosInput)
+
         return showResult(result)
     }
 
@@ -71,17 +74,28 @@ class CurrencyConversionService(val exchangeRageService: ExchangeRageService){
         val amount = userInput.slice(3 until userInput.length).toDouble()
         return amount
     }
+//    private fun correctRateForConversion(rates: Rates, target: String){
+////        when (rates){
+////            is "AUD"
+////
+////        }
+//
+//    }
+
 
     //realizar a conversão
     private fun conversion(valuesToConversion: Conversion): Conversion {
         val source = valuesToConversion.source.name
         val target = valuesToConversion.target.name
 
-        val rate = exchangeRageService.getRate(source,target)
-        val newAmount = valuesToConversion.amountToConversion * rate
-
-        valuesToConversion.amountConverted = newAmount
-        valuesToConversion.rate = rate
+        val sourceRates = ExchangeRates().captureSourceRates(source)
+//
+//
+//        val rate = exchangeRageService.getRate(source,target)
+//        val newAmount = valuesToConversion.amountToConversion * rate
+//
+//        valuesToConversion.amountConverted = newAmount
+//        valuesToConversion.rate = rate
         return valuesToConversion
     }
 
