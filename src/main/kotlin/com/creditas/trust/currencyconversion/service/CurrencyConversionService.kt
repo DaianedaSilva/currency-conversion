@@ -17,7 +17,7 @@ class CurrencyConversionService(val exchangeRatesClient: ExchangeRatesClient){
     }
 
     //possiveis moedas de conversão
-    private enum class CurrencyCode (val tagCodelanguage:String){
+    private enum class CurrencyCode (val tagCodeLanguage:String){
         AUD("en-AU"),
         BRL("pt-BR"),
         EUR("en-GB"),
@@ -116,7 +116,6 @@ class CurrencyConversionService(val exchangeRatesClient: ExchangeRatesClient){
                 
                 <h3>Exchange Rate: ${result.rate} </h3>
             </div>
-            
         """
 
     }
@@ -129,7 +128,7 @@ class CurrencyConversionService(val exchangeRatesClient: ExchangeRatesClient){
 
     //formatando a saída do amount
     private fun formatAmount(amount: Double, codeCurrent: String): String {
-        val format = NumberFormat.getCurrencyInstance(Locale.forLanguageTag((CurrencyCode.valueOf(codeCurrent).tagCodelanguage)))
+        val format = NumberFormat.getCurrencyInstance(Locale.forLanguageTag((CurrencyCode.valueOf(codeCurrent).tagCodeLanguage)))
         format.setMaximumFractionDigits(2)
         return format.format(amount)
 
