@@ -4,11 +4,10 @@ import org.springframework.stereotype.Service
 import java.lang.Exception
 import java.text.NumberFormat
 import java.util.*
-import com.creditas.trust.currencyconversion.data.models.ExchangeRates
-import com.creditas.trust.currencyconversion.data.models.ExchangeRates.Rates
+import com.creditas.trust.currencyconversion.client.ExchangeRatesClient
 
 @Service
-class CurrencyConversionService(){
+class CurrencyConversionService(val exchangeRatesClient: ExchangeRatesClient){
     public fun currencyConverse(userInput: String) :String {
         val infosInput = splitCurrency(userInput)
 
@@ -19,10 +18,10 @@ class CurrencyConversionService(){
 
     //possiveis moedas de conversão
     private enum class CurrencyCode (val tagCodelanguage:String){
-        AUD("en-AUD"),
+        AUD("en-AU"),
         BRL("pt-BR"),
         EUR("en-GB"),
-        IRR("prs-IR"),
+        ILS("iw-IL"),
         USD("en-US")
     }
 
@@ -74,29 +73,33 @@ class CurrencyConversionService(){
         val amount = userInput.slice(3 until userInput.length).toDouble()
         return amount
     }
-//    private fun correctRateForConversion(rates: Rates, target: String){
-////        when (rates){
-////            is "AUD"
-////
-////        }
-//
-//    }
-
 
     //realizar a conversão
     private fun conversion(valuesToConversion: Conversion): Conversion {
         val source = valuesToConversion.source.name
         val target = valuesToConversion.target.name
+        var rate = 0.0;
 
-        val sourceRates = ExchangeRates().captureSourceRates(source)
-//
-//
-//        val rate = exchangeRageService.getRate(source,target)
-//        val newAmount = valuesToConversion.amountToConversion * rate
-//
-//        valuesToConversion.amountConverted = newAmount
-//        valuesToConversion.rate = rate
+        if ( source == target){
+            rate = 1.0
+        }else{
+
+            val sourceRates = exchangeRatesClient.captureSourceRates(source)
+
+            when(target){
+                "AUD" -> rate = sourceRates.AUD
+                "BRL" -> rate = sourceRates.BRL
+                "EUR" -> rate = sourceRates.EUR
+                "ILS" -> rate = sourceRates.ILS
+                "USD" -> rate = sourceRates.USD
+            }
+
+        }
+        val newAmount = valuesToConversion.amountToConversion * rate
+        valuesToConversion.amountConverted = newAmount
+        valuesToConversion.rate = rate
         return valuesToConversion
+
     }
 
     //mostrar o resultado final para o suário
