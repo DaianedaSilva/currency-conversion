@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e12672c6-a474-4e3e-b1c4-a661f812ca49" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/currency-conversion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/currency-conversion.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/creditas/trust/currencyconversion/controller/CurrencyConversionController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/creditas/trust/currencyconversion/controller/CurrencyConversionController.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin File" />
+        <option value="Class" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -52,12 +59,16 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenDatabaseViewOnStart" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../trust" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2818004" />
   </component>
@@ -66,7 +77,7 @@
       <recent name="com.creditas.trust.currency.models" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ExchangeRatesKt">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -78,14 +89,66 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <module name="trust-currency-conversion.main" />
+    <configuration name="ExchangeRateKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="currency-conversion.main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <option name="MAIN_CLASS_NAME" value="com.creditas.trust.currencyconversion.data.models.ExchangeRateKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExchangeRatesKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="currency-conversion.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.creditas.trust.currencyconversion.data.models.ExchangeRatesKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RatesExchangeKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="currency-conversion.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.creditas.trust.currencyconversion.data.models.RatesExchangeKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TesteFuelArrayKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="currency-conversion.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.creditas.trust.currencyconversion.data.models.TesteFuelArrayKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TesteFuelKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="currency-conversion.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.creditas.trust.currencyconversion.data.models.TesteFuelKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -98,10 +161,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CurrencyConversionApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="currency-conversion.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.creditas.trust.currencyconversion.CurrencyConversionApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainKt" />
-        <item itemvalue="Application.MainKt" />
+        <item itemvalue="Application.ExchangeRatesKt" />
+        <item itemvalue="Application.ExchangeRateKt" />
+        <item itemvalue="Application.RatesExchangeKt" />
+        <item itemvalue="Application.TesteFuelArrayKt" />
       </list>
     </recent_temporary>
   </component>
@@ -115,8 +187,13 @@
       <updated>1619729912730</updated>
       <workItem from="1619729914014" duration="705000" />
       <workItem from="1619730946643" duration="589000" />
+      <workItem from="1620218667035" duration="21021000" />
+      <workItem from="1620250175224" duration="2299000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
