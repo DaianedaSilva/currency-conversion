@@ -6,12 +6,13 @@ import com.github.kittinunf.result.Result
 import com.google.gson.Gson
 
 class ExchangeRates {
+
     data class Rates(
-        val USD: Double,
-        val BRL: Double,
-        val EUR: Double,
-        val AUD: Double,
-        val IRR: Double,
+        val USD: Double = 1.0,
+        val BRL: Double = 1.0,
+        val EUR: Double = 1.0,
+        val AUD: Double = 1.0,
+        val IRR: Double = 1.0,
     )
 
     data class RatesExchange(
@@ -30,7 +31,7 @@ class ExchangeRates {
 
         val (request, response, result) = URL.responseObject(RatesExchange.Deserializer())
 
-        if( result is Result.Failure){
+        if (result is Result.Failure) {
             val ex = result.getException()
             println(ex)
         }
@@ -39,6 +40,8 @@ class ExchangeRates {
         println(data)
         return data.rates
     }
+}
 
-
+fun main (){
+    captureSourceRates("BRL")
 }

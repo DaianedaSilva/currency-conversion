@@ -26,23 +26,32 @@ data class RatesExchange(
 
 }
 
-fun captureSourceRates(from : String): Rates {
+fun captureSourceRates(from: String): Rates {
     val URL = Fuel.get("https://api.frankfurter.app/latest", listOf("from" to from))
 
     val (request, response, result) = URL.responseObject(RatesExchange.Deserializer())
 
-    if( result is Result.Failure){
+    if (result is Result.Failure) {
         val ex = result.getException()
         println(ex)
     }
 
     val data = result.get()
+
     println(data)
     return data.rates
+
+//    fun correctRateForConversion(rates: Rates, target: String) {
+//        when (rates) {
+//            is
+//                "
+//        }
+//    }
+
 }
 
 
-fun main(){
+fun main() {
     val rates = captureSourceRates("BRL")
     println(rates)
 }
