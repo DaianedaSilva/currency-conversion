@@ -38,8 +38,8 @@ class ExchangeRageService(val repository: ExchengeRateRepository) {
             "usd" -> return sourceRates.usd
 
         }
+        throw IllegalArgumentException(target)
 
-        return 0.0
     }
 
 
