@@ -30,15 +30,18 @@ class ExchangeRates {
         val URL = Fuel.get("https://api.frankfurter.app/latest", listOf("from" to from))
 
         val (request, response, result) = URL.responseObject(RatesExchange.Deserializer())
-
-        if (result is Result.Failure) {
-            val ex = result.getException()
-            println(ex)
+        when(result){
+            is Result.Failure -> {
+                val ex = result.getException()
+                println(ex)
+            }
+            is Result.Success ->{
+                val data = result.get()
+                return data.rates
+            }
         }
+//        throw
 
-        val data = result.get()
-        println(data)
-        return data.rates
     }
 }
 
